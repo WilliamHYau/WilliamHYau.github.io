@@ -7,23 +7,32 @@
     <script src="viewer.js"></script>
   </head>
   <body>
-    <h1>Image Viewer</h1>
+    <!-- <h1>Page Viewer</h1>-->
+	<!--	
     <button onclick="javascript:toDefault();">Default mode</button>
+
     <button onclick="javascript:toEditSolution();">Step 1: Create solution</button>
     <button onclick="javascript:toEditAnswer();">Step 2: Give answer</button>
     <button onclick="javascript:toShowSolution();">Step 3: Check answer</button>
     <button onclick="javascript:toEditAnnotations();">Other: Edit annotations</button>
     <button onclick="javascript:toShowAnnotations();">Other: Show annotations</button><br>
-    <canvas id="viewerCanvas" width="800" height="500" style="border: 1px solid black;"></canvas>
+    -->
+	<canvas id="viewerCanvas" width="1400" height="800" style="border: 1px solid black;"></canvas>
+	
     <p>
-    Select picture:
+    Select page:
     <ul>
-    <li><a href="javascript:setImage('./example-assets/lena.png');">Lena</a></li>
-    <li><a href="javascript:setImage('./example-assets/target.png');">Target</a></li>
+    <li><a href="javascript:setImage('./assets/Pg_26.png');">Page 26</a></li>
+    <li><a href="javascript:setImage('./assets/Pg_26.svg');">Page 26_svg</a></li>
+	<li><a href="javascript:setImage('./assets/Pg_28.svg');">Page 28_svg</a></li>
+	<li><a href="javascript:setImage('./assets/Pg_31.svg');">Page 31_svg</a></li>
+	<li><a href="javascript:setImage('./assets/Pg_39.svg');">Page 39_svg</a></li>
+	<li><a href="javascript:setImage('./assets/Pg_40.svg');">Page 40_svg</a></li>
+	<li><a href="javascript:setImage('./assets/Pg_48.svg');">Page 48_svg</a></li>
     </ul>
     </p>
     <script>
-      var imageSrc = 'example-assets/target.png'
+      var imageSrc = './assets/Pg_26.png'
         , canvasId = 'viewerCanvas'
         , myImageViewer = null
         , solution = []
@@ -101,7 +110,10 @@
       function setImage(newSrc){
         imageSrc = newSrc;
         myImageViewer.image.src = newSrc;
+
       }
     </script>
+
+	<script>toDefault();</script>
   </body>
 </html>
