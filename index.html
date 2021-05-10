@@ -1,0 +1,107 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Image Viewer</title>
+    <script src="lib/webfontloader/webfontloader.js"></script>
+    <script src="viewer.js"></script>
+  </head>
+  <body>
+    <h1>Image Viewer</h1>
+    <button onclick="javascript:toDefault();">Default mode</button>
+    <button onclick="javascript:toEditSolution();">Step 1: Create solution</button>
+    <button onclick="javascript:toEditAnswer();">Step 2: Give answer</button>
+    <button onclick="javascript:toShowSolution();">Step 3: Check answer</button>
+    <button onclick="javascript:toEditAnnotations();">Other: Edit annotations</button>
+    <button onclick="javascript:toShowAnnotations();">Other: Show annotations</button><br>
+    <canvas id="viewerCanvas" width="800" height="500" style="border: 1px solid black;"></canvas>
+    <p>
+    Select picture:
+    <ul>
+    <li><a href="javascript:setImage('./example-assets/lena.png');">Lena</a></li>
+    <li><a href="javascript:setImage('./example-assets/target.png');">Target</a></li>
+    </ul>
+    </p>
+    <script>
+      var imageSrc = 'example-assets/target.png'
+        , canvasId = 'viewerCanvas'
+        , myImageViewer = null
+        , solution = []
+        , annotations = []
+        , answer = null;
+
+      window.onload = function(){
+        WebFont.load({
+          custom: {
+            families: ['FontAwesome'],
+            urls: ['css/fonts.css'],
+            testStrings: {
+              // Fontawesome does not contain 'normal' characters,
+              // therefore we need to test 'special ones'
+              'FontAwesome': '\uf010\uf00e\uf1f8\uf024\uf040\uf047\uf00d\uf1f8'
+            }
+          },
+          fontactive: function() {
+            // initialize image viewer
+            myImageViewer = new ImageViewer(canvasId, imageSrc);
+          }
+        });
+      };
+
+      // methods to interact with viewer
+      function saveState(){
+        answer = myImageViewer.answer;
+        solution = myImageViewer.exportSolution();
+        annotations = myImageViewer.exportAnnotations();
+      }
+
+      function toDefault(){
+        if(myImageViewer !== null){
+          myImageViewer.dispose();
+        }
+        myImageViewer = new ImageViewer(canvasId, imageSrc);
+        solution = [];
+        answer = null;
+      }
+
+      function toEditAnswer(){
+        reloadImageViewer('editAnswer');
+      }
+
+      function toEditSolution(){
+        reloadImageViewer('editSolution');
+      }
+
+      function toShowSolution(){
+        reloadImageViewer('showSolution');
+      }
+
+      function toEditAnnotations(){
+        reloadImageViewer('editAnnotations');
+      }
+
+      function toShowAnnotations(){
+        reloadImageViewer('showAnnotations');
+      }
+
+      function reloadImageViewer(mode){
+        if(myImageViewer !== null){
+          saveState();
+          myImageViewer.dispose();
+        }
+        var options = { mode: mode,
+                        solution: solution,
+                        answer: answer,
+                        annotations: annotations
+                      };
+        myImageViewer = new ImageViewer(canvasId, imageSrc, options);
+      }
+
+      // change the image
+      function setImage(newSrc){
+        imageSrc = newSrc;
+        myImageViewer.image.src = newSrc;
+      }
+    </script>
+  </body>
+</html>
