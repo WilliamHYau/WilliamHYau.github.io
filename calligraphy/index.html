@@ -7,6 +7,17 @@
     <script src="viewer.js"></script>
 	<link rel="stylesheet" href="./css/style.css">
   </head>
+  <style>
+    floatycanvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: -1;
+    }
+
+  </style>
+
   <body>
   <!--
   <div class="menu">
@@ -110,11 +121,73 @@
 	<li><a href="javascript:setImage('./assets/61_new.png');">Page 50</a></li>
 	<li><a href="javascript:setImage('./assets/Afterword.png');">Afterword</a></li>
 
+  <li><a href="javascript:setImage('./assets/normalstyle/12.png');">Normal Style Page 1</a></li>
+	<li><a href="javascript:setImage('./assets/normalstyle/13.png');">Normal Style Page 2</a></li>
+	<li><a href="javascript:setImage('./assets/normalstyle/14.png');">Normal Style Page 3</a></li>
+	<li><a href="javascript:setImage('./assets/normalstyle/15.png');">Normal Style Page 4</a></li>
+	<li><a href="javascript:setImage('./assets/normalstyle/16.png');">Normal Style Page 5</a></li>
+	<li><a href="javascript:setImage('./assets/normalstyle/17.png');">Normal Style Page 6</a></li>
+	<li><a href="javascript:setImage('./assets/normalstyle/18.png');">Normal Style Page 7</a></li>
+	<li><a href="javascript:setImage('./assets/normalstyle/19.png');">Normal Style Page 8</a></li>
+	<li><a href="javascript:setImage('./assets/normalstyle/20.png');">Normal Style Page 9</a></li>
+	<li><a href="javascript:setImage('./assets/normalstyle/21.png');">Normal Style Page 10</a></li>
+	<li><a href="javascript:setImage('./assets/normalstyle/22.png');">Normal Style Page 11</a></li>
+	<li><a href="javascript:setImage('./assets/normalstyle/23.png');">Normal Style Page 12</a></li>
+	<li><a href="javascript:setImage('./assets/normalstyle/24.png');">Normal Style Page 13</a></li>
+	<li><a href="javascript:setImage('./assets/normalstyle/25.png');">Normal Style Page 14</a></li>
+	<li><a href="javascript:setImage('./assets/normalstyle/26.png');">Normal Style Page 15</a></li>
+	<li><a href="javascript:setImage('./assets/normalstyle/27.png');">Normal Style Page 16</a></li>
+	<li><a href="javascript:setImage('./assets/normalstyle/28.png');">Normal Style Page 17</a></li>
+	<li><a href="javascript:setImage('./assets/normalstyle/29.png');">Normal Style Page 18</a></li>
+	<li><a href="javascript:setImage('./assets/normalstyle/30.png');">Normal Style Page 19</a></li>
+	<li><a href="javascript:setImage('./assets/normalstyle/31.png');">Normal Style Page 20</a></li>
+	<li><a href="javascript:setImage('./assets/normalstyle/32.png');">Normal Style Page 21</a></li>
+	<li><a href="javascript:setImage('./assets/normalstyle/33.png');">Normal Style Page 22</a></li>
+	<li><a href="javascript:setImage('./assets/normalstyle/34.png');">Normal Style Page 23</a></li>
+	<li><a href="javascript:setImage('./assets/normalstyle/35.png');">Normal Style Page 24</a></li>
+	<li><a href="javascript:setImage('./assets/normalstyle/36.png');">Normal Style Page 25</a></li>
+	<li><a href="javascript:setImage('./assets/normalstyle/37.png');">Normal Style Page 26</a></li>
+	<li><a href="javascript:setImage('./assets/normalstyle/38.png');">Normal Style Page 27</a></li>
+	<li><a href="javascript:setImage('./assets/normalstyle/39.png');">Normal Style Page 28</a></li>
+	<li><a href="javascript:setImage('./assets/normalstyle/40.png');">Normal Style Page 29</a></li>
+	<li><a href="javascript:setImage('./assets/normalstyle/41.png');">Normal Style Page 30</a></li>
+	<li><a href="javascript:setImage('./assets/normalstyle/42.png');">Normal Style Page 31</a></li>
+	<li><a href="javascript:setImage('./assets/normalstyle/43.png');">Normal Style Page 32</a></li>
+	<li><a href="javascript:setImage('./assets/normalstyle/44.png');">Normal Style Page 33</a></li>
+	<li><a href="javascript:setImage('./assets/normalstyle/45.png');">Normal Style Page 34</a></li>
+	<li><a href="javascript:setImage('./assets/normalstyle/46.png');">Normal Style Page 35</a></li>
+	<li><a href="javascript:setImage('./assets/normalstyle/47.png');">Normal Style Page 36</a></li>
+	<li><a href="javascript:setImage('./assets/normalstyle/48.png');">Normal Style Page 37</a></li>
+	<li><a href="javascript:setImage('./assets/normalstyle/49.png');">Normal Style Page 38</a></li>
+	<li><a href="javascript:setImage('./assets/normalstyle/50.png');">Normal Style Page 39</a></li>
+	<li><a href="javascript:setImage('./assets/normalstyle/51.png');">Normal Style Page 40</a></li>
+	<li><a href="javascript:setImage('./assets/normalstyle/52.png');">Normal Style Page 41</a></li>
+	<li><a href="javascript:setImage('./assets/normalstyle/53.png');">Normal Style Page 42</a></li>
+	<li><a href="javascript:setImage('./assets/normalstyle/54.png');">Normal Style Page 43</a></li>
+	<li><a href="javascript:setImage('./assets/normalstyle/55.png');">Normal Style Page 44</a></li>
+	<li><a href="javascript:setImage('./assets/normalstyle/56.png');">Normal Style Page 45</a></li>
+	<li><a href="javascript:setImage('./assets/normalstyle/57.png');">Normal Style Page 46</a></li>
+	<li><a href="javascript:setImage('./assets/normalstyle/58.png');">Normal Style Page 47</a></li>
+	<li><a href="javascript:setImage('./assets/normalstyle/59.png');">Normal Style Page 48</a></li>
+	<li><a href="javascript:setImage('./assets/normalstyle/60.png');">Normal Style Page 49</a></li>
+	<li><a href="javascript:setImage('./assets/normalstyle/61.png');">Normal Style Page 50</a></li>
+  
+  <li><a href="javascript:setImage('./assets/appendix_1.png');">Appendix 2:1</a></li>
+  <li><a href="javascript:setImage('./assets/appendix_2.png');">Appendix 2:2</a></li>
+  <li><a href="javascript:setImage('./assets/appendix_3.png');">Appendix 2:3</a></li>
+  <li><a href="javascript:setImage('./assets/appendix_4.png');">Appendix 2:4</a></li>
+  <li><a href="javascript:setImage('./assets/appendix_5.png');">Appendix 2:5</a></li>
+  
+
+
     </ul>
 	</nav>
 	</div>
+  <floatycanvas>
    <canvas id="viewerCanvas" width="1400" height="700" style="border: 0px solid black;"></canvas>
+  </floatycanvas>
     <script>
+      // position: fixed;
       var imageSrc = './assets/01.png'
         , canvasId = 'viewerCanvas'
         , myImageViewer = null
@@ -156,35 +229,13 @@
         answer = null;
       }
 
-      function toEditAnswer(){
-        reloadImageViewer('editAnswer');
-      }
-
-      function toEditSolution(){
-        reloadImageViewer('editSolution');
-      }
-
-      function toShowSolution(){
-        reloadImageViewer('showSolution');
-      }
-
-      function toEditAnnotations(){
-        reloadImageViewer('editAnnotations');
-      }
-
-      function toShowAnnotations(){
-        reloadImageViewer('showAnnotations');
-      }
-
+      
       function reloadImageViewer(mode){
         if(myImageViewer !== null){
           saveState();
           myImageViewer.dispose();
         }
-        var options = { mode: mode,
-                        solution: solution,
-                        answer: answer,
-                        annotations: annotations
+        var options = { mode: mode                        
                       };
         myImageViewer = new ImageViewer(canvasId, imageSrc, options);
       }
