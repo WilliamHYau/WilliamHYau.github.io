@@ -184,7 +184,8 @@
 	</nav>
 	</div>
   <floatycanvas>
-   <canvas id="viewerCanvas" width="1400" height="700" style="border: 0px solid black;"></canvas>
+
+   <canvas id="viewerCanvas" width=  1400 height= 700 style="border: 0px solid black;"></canvas>
   </floatycanvas>
     <script>
       // position: fixed;
@@ -194,7 +195,7 @@
         , solution = []
         , annotations = []
         , answer = null;
-
+    
       window.onload = function(){
         WebFont.load({
           custom: {
@@ -212,6 +213,17 @@
           }
         });
       };
+      
+      window.addEventListener("resize", function(){
+           var w = window.innerWidth;
+	   var h = window.innerHeight;
+	     
+	   viewerCanvas.width = w-300;
+	   viewerCanvas.height  = h;
+	   
+	   reloadImageViewer();
+      
+      });
 
       // methods to interact with viewer
       function saveState(){
