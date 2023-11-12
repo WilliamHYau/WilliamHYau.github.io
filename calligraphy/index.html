@@ -185,7 +185,7 @@
 	</div>
   <floatycanvas>
 
-   <canvas id="viewerCanvas" width=  1400 height= 700 style="border: 0px solid black;"></canvas>
+   <canvas id="viewerCanvas" width=  1400 height= 700 style="border: 0px solid black; position: absolute; top: 0px; left: 150px;"></canvas>
   </floatycanvas>
     <script>
       // position: fixed;
@@ -195,6 +195,14 @@
         , solution = []
         , annotations = []
         , answer = null;
+        
+	var w = window.innerWidth;
+	   var h = window.innerHeight;
+	     
+	   viewerCanvas.width = w-175;
+	   viewerCanvas.height  = h;
+	   
+	   reloadImageViewer();
     
       window.onload = function(){
         WebFont.load({
@@ -211,6 +219,7 @@
             // initialize image viewer
             myImageViewer = new ImageViewer(canvasId, imageSrc);
           }
+          
         });
       };
       
@@ -218,7 +227,7 @@
            var w = window.innerWidth;
 	   var h = window.innerHeight;
 	     
-	   viewerCanvas.width = w-300;
+	   viewerCanvas.width = w-175;
 	   viewerCanvas.height  = h;
 	   
 	   reloadImageViewer();
